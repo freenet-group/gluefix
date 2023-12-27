@@ -25,4 +25,3 @@ changelog = "https://github.com/freenet-group/gluefix/releases"
 
 [tool.setuptools_scm]
 version_file = "_version.py"
-write_to_template = "__version__ = \"{version}\"\n"
