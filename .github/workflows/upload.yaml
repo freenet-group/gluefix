@@ -2,9 +2,6 @@ on:
   release:
     types: [published]
 
-env:
-  TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,6 +13,9 @@ jobs:
       - run: pipx install twine
       - run: pyproject-build
       - run: twine upload dist/* --disable-progress-bar
+        env:
+          TWINE_USERNAME: ""
+          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
       - uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
         with:
           files: dist/*
