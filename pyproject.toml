@@ -24,4 +24,4 @@ repository = "https://github.com/freenet-group/gluefix"
 changelog = "https://github.com/freenet-group/gluefix/releases"
 
 [tool.setuptools_scm]
-version_file = "_version.py"
+version_file = "gluefix.py"
